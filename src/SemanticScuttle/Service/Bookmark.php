@@ -734,7 +734,7 @@ class SemanticScuttle_Service_Bookmark extends SemanticScuttle_DbService
             $tags = explode('+', trim($tags));
         }
 
-        $tagcount = count($tags);
+        $tagcount = empty($tags) ? 0 : count($tags);
         for ($i = 0; $i < $tagcount; $i ++) {
             $tags[$i] = trim($tags[$i]);
         }
@@ -853,7 +853,7 @@ class SemanticScuttle_Service_Bookmark extends SemanticScuttle_DbService
             $aTerms = array_map('trim', $aTerms);
 
             // Search terms in tags as well when none given
-            if (!count($tags)) {
+            if (!empty($tags)) {
                 $query_2 .= ' LEFT JOIN '. $b2tservice->getTableName() .' AS T'
                     . ' ON B.bId = T.bId';
                 $dotags = true;
@@ -1136,7 +1136,7 @@ class SemanticScuttle_Service_Bookmark extends SemanticScuttle_DbService
 
         // Delete final /
         if (substr($address, -1) == '/') {
-            $address = substr($address, 0, count($address)-2);
+            $address = substr($address, 0, strlen($address)-2);
         }
 
         return $address;

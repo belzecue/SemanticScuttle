@@ -1,4 +1,4 @@
-ALTER TABLE `sc_bookmarks` CHANGE `bDescription` `bDescription` VARCHAR( 1500 )
+ALTER TABLE `sc_bookmarks` CHANGE `bDescription` `bDescription` VARCHAR( 1500 );
 CREATE TABLE `sc_tagscache` (
    `tcId` int(11) NOT NULL auto_increment,
    `tag1` varchar(100) NOT NULL default '',

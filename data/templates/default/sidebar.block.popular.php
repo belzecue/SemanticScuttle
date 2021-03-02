@@ -31,7 +31,7 @@ if ($popularTags && count($popularTags) > 0) {
     }
 
     foreach ($popularTags as $row) {
-        $entries = T_ngettext('bookmark', 'bookmarks', $row['bCount']);
+        $entries = T_ngettext('bookmark', 'bookmarks', (int)$row['bCount']);
         $contents .= '<a href="'. sprintf($cat_url, $user, filter($row['tag'], 'url')) .'" title="'. $row['bCount'] .' '. $entries .'" rel="tag" style="font-size:'. $row['size'] .'">'. filter($row['tag']) .'</a> ';
     }
     echo $contents ."\n";

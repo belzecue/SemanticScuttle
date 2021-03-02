@@ -46,7 +46,7 @@ $cleanurls = false;
  *
  * @var boolean
  */
-$debugMode = true;
+$debugMode = false;
 
 
 /***************************************************
@@ -62,7 +62,7 @@ $debugMode = true;
  *
  * @var string
  */
-$dbtype = 'mysql4';
+$dbtype = 'mysqli';
 /**
  * Database username
  *
@@ -89,7 +89,7 @@ $dbname = 'scuttle';
  *
  * @var string
  */
-$dbhost = '127.0.0.1';
+$dbhost = 'localhost';
 
 
 /***************************************************

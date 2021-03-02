@@ -53,7 +53,7 @@ JS;
 	$taglist = '';
 	foreach (array_keys($tagsCloud) as $key) {
 	    $row = $tagsCloud[$key];
-	    $entries = T_ngettext('bookmark', 'bookmarks', $row['bCount']);
+	    $entries = T_ngettext('bookmark', 'bookmarks', (int)$row['bCount']);
 	    $taglist .= '<span'
             . ' title="'. $row['bCount'] . ' ' . $entries . '"'
             . ' style="font-size:' . $row['size'] . '"'

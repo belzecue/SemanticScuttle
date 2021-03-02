@@ -115,7 +115,7 @@ $usecache = false;
  *
  * @var string
  */
-$dir_cache = dirname(__FILE__) . '/cache/';
+$dir_cache = dirname(__DIR__, 1) . '/cache';
 
 /**
  * Use clean urls without .php filenames.
@@ -149,14 +149,14 @@ $debugMode = false;
  *
  * @var string
  */
-$dbtype = 'mysql4';
+$dbtype = 'mysqli';
 
 /**
  * Database hostname/IP
  *
  * @var string
  */
-$dbhost = '127.0.0.1';
+$dbhost = 'localhost';
 
 /**
  * Database port.

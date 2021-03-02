@@ -5,6 +5,9 @@
 -- Table structure for table `sc_bookmarks`
 -- 
 
+# to avoid STRICT_TRANS_TABLES mode
+SET sql_mode = '';
+
 CREATE TABLE `sc_bookmarks` (
   `bId` int(11) NOT NULL auto_increment,
   `uId` int(11) NOT NULL default '0',
@@ -17,8 +20,8 @@ CREATE TABLE `sc_bookmarks` (
   `bDescription` text default NULL,
   `bPrivateNote` text default NULL,
   `bHash` varchar(32) NOT NULL default '',
-  `bVotes` int(11) NOT NULL,
-  `bVoting` int(11) NOT NULL,
+  `bVotes` int(11) NOT NULL default '0',
+  `bVoting` int(11) NOT NULL default '0',
   `bShort` varchar(16) default NULL,
   PRIMARY KEY  (`bId`),
   KEY `sc_bookmarks_usd` (`uId`,`bStatus`,`bDatetime`),

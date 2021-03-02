@@ -6,7 +6,7 @@
 
 # Rewrite clean URLs onto real files
 <IfModule mod_rewrite.c>
-Options +FollowSymlinks
+Options -MultiViews +FollowSymlinks
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/.]+)/?(.*)$ /$1.php/$2 [QSA,L]
