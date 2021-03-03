@@ -14,3 +14,20 @@ SemanticScuttle is a social bookmarking tool experimenting with new features lik
 
   * https://sourceforge.net/projects/semanticscuttle/
   * https://github.com/cweiske/SemanticScuttle
+
+# Installation
+
+Follow the [Standard installation
+instructions](http://semanticscuttle.sourceforge.net/docs/INSTALL.html#standard-installation-instructions)
+in the SemanticScuttle documentation.
+
+### IMPORTANT!
+
+The following SQL statements may be needed after installation to allow
+creation of new bookmarks.  If applying after bookmarks have been added,
+also manually reset both column values to NULL where value is zero.
+
+```sql
+ALTER TABLE `sc_bookmarks` CHANGE `bVoting` `bVoting` INT(11)  NULL  DEFAULT NULL;
+ALTER TABLE `sc_bookmarks` CHANGE `bVotes` `bVotes` INT(11)  NULL  DEFAULT NULL;
+```
